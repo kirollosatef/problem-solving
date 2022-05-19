@@ -6,4 +6,4 @@ int main()
   cin >> x >> y;
   (x <= y) ? ((x % 2) ? cout << "Akshat" : cout << "Malvika")
            : ((y % 2) ? cout << "Akshat" : cout << "Malvika");
-}ص
+}

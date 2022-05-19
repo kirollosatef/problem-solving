@@ -1,5 +1,8 @@
+**.exe
+**.class
 .vscode
 .code-workspace
-**.exe
 .editorconfig
-not-completed-yet
+package-lock.json
+package.json
+node_modules
