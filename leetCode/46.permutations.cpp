@@ -13,15 +13,15 @@ public:
   vector<vector<int>> permute(vector<int> &nums)
   {
     vector<vector<int>> res;
-    vector<int> prifix;
-    permuteRec(nums, prifix, res);
+    vector<int> prefix;
+    permuteRec(nums, prefix, res);
     return res;
   }
-  void permuteRec(vector<int> &nums, vector<int> &prifix, vector<vector<int>> &res)
+  void permuteRec(vector<int> &nums, vector<int> &prefix, vector<vector<int>> &res)
   {
-    if (prifix.size() == nums.size())
+    if (prefix.size() == nums.size())
     {
-      res.push_back(prifix);
+      res.push_back(prefix);
       return;
     }
     vector<int> tmp = nums;
@@ -29,11 +29,11 @@ public:
     {
       if (tmp[i] == -20)
         continue;
-      prifix.push_back(tmp[i]);
+      prefix.push_back(tmp[i]);
       tmp[i] = -20;
-      permuteRec(tmp, prifix, res);
-      tmp[i] = prifix.back();
-      prifix.pop_back();
+      permuteRec(tmp, prefix, res);
+      tmp[i] = prefix.back();
+      prefix.pop_back();
     }
   }
 };
