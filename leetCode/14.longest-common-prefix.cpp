@@ -7,7 +7,7 @@
 using namespace std;
 // @lc code=start
 class Solution
-{
+{ 
 public:
   string longestCommonPrefix(vector<string> &strs)
   {
