@@ -16,4 +16,31 @@ typedef long long ll;
 int main()
 {
   o_a;
+  ll n, count = 0;
+  cin >> n;
+  int arr[n], nums[101] = {0};
+  for (int i = 0; i < n; i++)
+  {
+    cin >> arr[i];
+    count += arr[i];
+  }
+  int target = count / (n / 2);
+  for (int i = 0; i < n; i++)
+  {
+    if (nums[i] == 0)
+    {
+      for (int j = 0; j < n; j++)
+      {
+        if (nums[j] == 0 && i != j)
+        {
+          if (arr[i] + arr[j] == target)
+          {
+            nums[i] = nums[j] = 1;
+            cout << i + 1 << " " << j + 1 << endl;
+            break;
+          }
+        }
+      }
+    }
+  }
 }
