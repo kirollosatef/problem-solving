@@ -11,7 +11,7 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int n, total = 0;
+  int n, total = 0, maxx = 0;
   cin >> n;
   while (n--)
   {
@@ -19,7 +19,7 @@ int main()
     cin >> out >> in;
     total -= out;
     total += in;
-    cout << total << endl;
+    maxx = max(maxx, total);
   }
-  cout << total;
+  cout << maxx;
 }
