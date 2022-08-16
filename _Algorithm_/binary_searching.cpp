@@ -10,7 +10,6 @@
 using namespace std;
 int find_position(int arr[], int n, int f)
 {
-
 }
 int main()
 {
@@ -38,3 +37,4 @@ int main()
   }
   cout << ans;
 }
+
