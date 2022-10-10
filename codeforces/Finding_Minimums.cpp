@@ -13,13 +13,20 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int n;
-  cin >> n;
-  int a = n % 10, b = n / 10;
-  if (a % b == 0)
-    cout << "YES";
-  else if (b % a == 0)
-    cout << "YES";
-  else
-    cout << "NO";
+  int mn = INT_MAX;
+  int n, k, c = 0;
+  cin >> n >> k;
+  for (int i = 0; i < n; i++)
+  {
+    int x;
+    cin >> x;
+    mn = min(mn, x);
+    c++;
+    if (c == k || i == n - 1)
+    {
+      cout << mn << " ";
+      mn = INT_MAX;
+      c = 0;
+    }
+  }
 }

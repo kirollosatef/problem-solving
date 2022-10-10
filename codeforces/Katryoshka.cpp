@@ -13,13 +13,15 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int n;
-  cin >> n;
-  int a = n % 10, b = n / 10;
-  if (a % b == 0)
-    cout << "YES";
-  else if (b % a == 0)
-    cout << "YES";
-  else
-    cout << "NO";
+  ll n, m, k;
+  cin >> n >> m >> k;
+  ll ans = 0;
+  if (n > 0 && m > 0 && k > 0)
+    ans += min((min(n, m)), k);
+  n -= ans;
+  m -= ans;
+  k -= ans;
+  if (n > 1 && k > 0)
+    ans += min((n / 2), k);
+  cout << ans;
 }

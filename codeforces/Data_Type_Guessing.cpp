@@ -13,13 +13,12 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int n;
-  cin >> n;
-  int a = n % 10, b = n / 10;
-  if (a % b == 0)
-    cout << "YES";
-  else if (b % a == 0)
-    cout << "YES";
+  ll n, k, a;
+  cin >> n >> k >> a;
+  if ((n * k) % a != 0)
+    cout << "double";
+  else if (((n * k) / a) <= 2147483647 && ((n * k) / a) >= -2147483648)
+    cout << "int";
   else
-    cout << "NO";
+    cout << "long long";
 }

@@ -13,13 +13,11 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int n;
+  ll n;
   cin >> n;
-  int a = n % 10, b = n / 10;
-  if (a % b == 0)
-    cout << "YES";
-  else if (b % a == 0)
-    cout << "YES";
+  cout << n / 4 << " ";
+  if (((n / 4) % 2) == 0)
+    cout << n % 4;
   else
-    cout << "NO";
+    cout << 3 - (n % 4);
 }

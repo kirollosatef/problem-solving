@@ -15,11 +15,25 @@ int main()
   o_a;
   int n;
   cin >> n;
-  int a = n % 10, b = n / 10;
-  if (a % b == 0)
-    cout << "YES";
-  else if (b % a == 0)
-    cout << "YES";
-  else
-    cout << "NO";
+  for (int i = 1; i <= n / 2; i++)
+  {
+    if(i)
+    for (int j = 1; j <= n; j++)
+      cout << "*";
+    cout << endl;
+  }
+  for (int i = 1; i <= n; i++)
+  {
+    if (i == ((n / 2) + 1))
+      cout << "X";
+    else
+      cout << "*";
+  }
+  cout << endl;
+  for (int i = 1; i <= n / 2; i++)
+  {
+    for (int j = 1; j <= n; j++)
+      cout << "*";
+    cout << endl;
+  }
 }

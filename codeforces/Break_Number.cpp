@@ -10,16 +10,28 @@
 using namespace std;
 #define pb push_back
 typedef long long ll;
+ll numDiv(ll n)
+{
+  ll c = 0;
+  while (n != 0)
+  {
+    if (n % 2 != 0)
+      break;
+    c++;
+    n /= 2;
+  }
+  return c;
+}
 int main()
 {
   o_a;
-  int n;
-  cin >> n;
-  int a = n % 10, b = n / 10;
-  if (a % b == 0)
-    cout << "YES";
-  else if (b % a == 0)
-    cout << "YES";
-  else
-    cout << "NO";
+  ll t, mx = 0;
+  cin >> t;
+  while (t--)
+  {
+    ll x;
+    cin >> x;
+    mx = max(mx, numDiv(x));
+  }
+  cout << mx;
 }

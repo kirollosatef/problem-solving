@@ -10,16 +10,22 @@
 using namespace std;
 #define pb push_back
 typedef long long ll;
+ll sumNu(ll n)
+{
+  ll ans = (n * (n + 1)) / 2;
+  return ans;
+}
 int main()
 {
   o_a;
-  int n;
-  cin >> n;
-  int a = n % 10, b = n / 10;
-  if (a % b == 0)
-    cout << "YES";
-  else if (b % a == 0)
-    cout << "YES";
-  else
-    cout << "NO";
+  ll t;
+  cin >> t;
+  while (t--)
+  {
+    ll L;
+    ll R;
+    cin >> L >> R;
+    ll sum = sumNu(R) - sumNu(L - 1);
+    cout << sum << endl;
+  }
 }
