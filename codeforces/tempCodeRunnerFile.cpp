@@ -1,2 +1,2 @@
 
-        indx = i;
+      cout << 0 << endl;
