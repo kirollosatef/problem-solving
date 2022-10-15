@@ -7,3 +7,6 @@
 
 ### 2022-ICPC Alexandria ([pdf](https://github.com/kirollosatef/problem-solving/files/8729259/2022-ICPC.Alexandria.U.CPC-kirollos.Atef-PLACE.pdf))
 <image src ="https://user-images.githubusercontent.com/74256854/169299448-12f69447-79c5-4e1d-8a69-9be9fb65de1c.png" width = 700px>
+
+### 2023-ICPC Alexandria [pdf](https://github.com/kirollosatef/problem-solving/files/9791923/2023-ECPCQDAYONE2022-kirollos.Atef-PLACE.1.1.pdf)
+<image src ="https://user-images.githubusercontent.com/74256854/195984578-84248e63-249b-4935-9744-6c4e59f1e4c9.png" width = 700px>
