@@ -10,23 +10,23 @@
 using namespace std;
 #define pb push_back
 typedef long long ll;
+int M, N = 20;
+ll add(ll a, ll b)
+{
+  return ((a % M) + (b % M));
+}
+ll gcd(ll a, ll b)
+{
+  // gcd(a,b) = gc (b , a%b)
+  // stpping when b = 0
+}
+ll fact[N], inv[N];
+void preCompute()
+{
+}
 int main()
 {
+
   o_a;
-  int n, ans = 0;
-  cin >> n;
-  int arr[n + 1] = {0};
-  for (int i = 2; i <= n; i++)
-  {
-    if (!arr[i])
-    {
-      for (int j = i + 1; j <= n; j++)
-        if (j % i == 0)
-          arr[j]++;
-    }
-  }
-  for (int i = 0; i <= n; i++)
-    if (arr[i] == 2)
-      ans++;
-  cout << ans;
+  cout << (-8) % 3;
 }

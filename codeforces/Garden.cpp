@@ -13,20 +13,14 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int n, ans = 0;
-  cin >> n;
-  int arr[n + 1] = {0};
-  for (int i = 2; i <= n; i++)
+  int n, k, ans = INT_MAX;
+  cin >> n >> k;
+  while (n--)
   {
-    if (!arr[i])
-    {
-      for (int j = i + 1; j <= n; j++)
-        if (j % i == 0)
-          arr[j]++;
-    }
+    int x;
+    cin >> x;
+    if (!(k % x))
+      ans = min(ans, k / x);
   }
-  for (int i = 0; i <= n; i++)
-    if (arr[i] == 2)
-      ans++;
   cout << ans;
 }

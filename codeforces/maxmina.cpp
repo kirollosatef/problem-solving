@@ -13,20 +13,19 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int n, ans = 0;
-  cin >> n;
-  int arr[n + 1] = {0};
-  for (int i = 2; i <= n; i++)
+  int t;
+  cin >> t;
+  while (t--)
   {
-    if (!arr[i])
+    int n, k, ok = 0;
+    cin >> n >> k ;
+    for (int i = 0; i < n; i++)
     {
-      for (int j = i + 1; j <= n; j++)
-        if (j % i == 0)
-          arr[j]++;
+      int x;
+      cin >> x;
+      if (x == 1)
+        ok = 1;
     }
+    (ok) ? cout << "YES\n" : cout << "NO\n";
   }
-  for (int i = 0; i <= n; i++)
-    if (arr[i] == 2)
-      ans++;
-  cout << ans;
 }

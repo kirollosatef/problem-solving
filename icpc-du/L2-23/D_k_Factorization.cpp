@@ -13,20 +13,30 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int n, ans = 0;
-  cin >> n;
-  int arr[n + 1] = {0};
-  for (int i = 2; i <= n; i++)
+  int n, k;
+  cin >> n >> k;
+  int temp = n;
+  vector<int> arr;
+  for (int i = 2; i * i <= n; i++)
   {
-    if (!arr[i])
+    while (n % i == 0)
     {
-      for (int j = i + 1; j <= n; j++)
-        if (j % i == 0)
-          arr[j]++;
+      arr.pb(i);
+      n /= i;
     }
   }
-  for (int i = 0; i <= n; i++)
-    if (arr[i] == 2)
-      ans++;
-  cout << ans;
+  if (n > 1)
+    arr.pb(n);
+  if (arr.size() < k)
+  {
+    cout << -1;
+    return 0;
+  }
+  int p = 1;
+  for (int i = 0; i < k - 1; i++)
+  {
+    cout << arr[i] << " ";
+    p *= arr[i];
+  }
+  cout << temp / p;
 }

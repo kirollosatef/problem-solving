@@ -13,5 +13,4 @@ typedef long long ll;
 int main()
 {
   o_a;
-  
 }
