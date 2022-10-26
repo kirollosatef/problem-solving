@@ -27,6 +27,7 @@ int main()
     int guess = arr[mid];
     if (guess == f)
     {
+    
       ans = mid;
       break;
     }
@@ -37,4 +38,3 @@ int main()
   }
   cout << ans;
 }
-
