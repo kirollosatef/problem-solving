@@ -1,0 +1,17 @@
+=> delivery
+  => attrepute
+    - id : string
+    - national ID : string
+    - name : string
+    - email : string
+    - phone : string
+    - address : string
+    - role : enum['delivery']
+    - status : enum['active', 'inactive']
+    - password : string
+    - creditCard : [number: string, cvv: string, expiry: string]
+  => functionalty
+    - login / register
+    - update or delete information
+    - view orders and apply for order
+    - update status of order
