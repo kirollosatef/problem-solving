@@ -15,23 +15,17 @@ public:
     int n = nums.size();
     if (n == 0)
       return ans;
-    int l = nums[0], r = nums[0];
+    int a = nums[0];
     for (int i = 0; i < n; i++)
     {
-      if (nums[i + 1] == nums[i] + 1)
-        r = nums[i + 1];
-      else
+      if (nums[i + 1] != nums[i] + 1 || i == n - 1)
       {
-        if (l == r)
-        {
-          ans.push_back(to_string(l));
-          r = l = nums[i + 1];
-        }
+        if (nums[i] != a)
+          ans.push_back(to_string(a) + "->" + to_string(nums[i]));
         else
-        {
-          ans.push_back(to_string(l) + "->" + to_string(r));
-          r = l = nums[i + 1];
-        }
+          ans.push_back(to_string(a));
+        if (i != n - 1)
+          a = nums[i + 1];
       }
     }
     return ans;
