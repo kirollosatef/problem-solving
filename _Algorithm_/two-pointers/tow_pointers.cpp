@@ -30,5 +30,22 @@ typedef long long ll;
 int main()
 {
   o_a;
-  
+  // find the first and last index of a target number in a sorted array
+  ll n, target;
+  cin >> n >> target;
+  v(ll) arr(n);
+  cinarr(n, arr);
+  int l = 0, r = n - 1;
+  while (l < r)
+  {
+    if (arr[l] + arr[r] == target)
+    {
+      cout << "found at: " << l << " " << r << endl;
+      break;
+    }
+    else if ((arr[l] + arr[r]) > target)
+      r--;
+    else
+      l++;
+  }
 }

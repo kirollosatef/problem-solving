@@ -28,19 +28,30 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int n, b1 = 0, b2 = 0;
-  cin >> n;
-  v(int) arr(n);
-  cinarr(n, arr);
-  int l = 0, r = n - 1;
-  int ok = 1;
-  while (n--)
+  whilet
   {
-    if (ok)
-      (arr[l] > arr[r]) ? b1 += arr[l++] : b1 += arr[r--];
-    else
-      (arr[l] > arr[r]) ? b2 += arr[l++] : b2 += arr[r--];
-    ok = !ok;
+    ll n;
+    cin >> n;
+    ll arr[n];
+    cinarr(n, arr);
+    ll mx1 = 0, mx2 = 0;
+    for (int i = 0; i < n; i++)
+    {
+      if (arr[i] > mx1)
+      {
+        mx2 = mx1;
+        mx1 = arr[i];
+      }
+      else if (arr[i] > mx2)
+        mx2 = arr[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+      if (arr[i] != mx1)
+        cout << arr[i] - mx1 << " ";
+      else
+        cout << arr[i] - mx2 << " ";
+    }
+    cout << endl;
   }
-  cout << b1 << " " << b2 << endl;
 }

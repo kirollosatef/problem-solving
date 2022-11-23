@@ -28,19 +28,28 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int n, b1 = 0, b2 = 0;
-  cin >> n;
-  v(int) arr(n);
-  cinarr(n, arr);
-  int l = 0, r = n - 1;
-  int ok = 1;
-  while (n--)
+  whilet
   {
-    if (ok)
-      (arr[l] > arr[r]) ? b1 += arr[l++] : b1 += arr[r--];
+    string s, c = "Yes";
+    cin >> s;
+    int index = 0;
+    index = c.find(s[0]);
+    int ok = 1;
+    if (index != -1)
+    {
+      lp(1, sz(s), i)
+      {
+        index++;
+        index %= 3;
+        if (s[i] != c[index])
+        {
+          ok = 0;
+          break;
+        }
+      }
+    }
     else
-      (arr[l] > arr[r]) ? b2 += arr[l++] : b2 += arr[r--];
-    ok = !ok;
+      ok = 0;
+    (ok) ? YES : NO;
   }
-  cout << b1 << " " << b2 << endl;
 }

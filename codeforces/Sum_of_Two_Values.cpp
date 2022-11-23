@@ -14,7 +14,7 @@
 #define YES cout << "YES\n"
 #define NO cout << "NO\n"
 #define pb push_back
-#define mp make_pair
+// #define mp make_pair
 #define endl "\n"
 #define ins insert
 #define F first
@@ -25,22 +25,27 @@
   while (t--)
 using namespace std;
 typedef long long ll;
+map<ll, ll> mp;
 int main()
 {
   o_a;
-  int n, b1 = 0, b2 = 0;
-  cin >> n;
-  v(int) arr(n);
-  cinarr(n, arr);
-  int l = 0, r = n - 1;
-  int ok = 1;
-  while (n--)
+  ll n, k;
+  cin >> n >> k;
+  v(ll) arr;
+  for (ll i = 0; i < n; i++)
   {
-    if (ok)
-      (arr[l] > arr[r]) ? b1 += arr[l++] : b1 += arr[r--];
-    else
-      (arr[l] > arr[r]) ? b2 += arr[l++] : b2 += arr[r--];
-    ok = !ok;
+    ll x;
+    cin >> x;
+    arr.pb(x);
+    mp[x] = i;
   }
-  cout << b1 << " " << b2 << endl;
+  for (ll i = 0; i < n; i++)
+  {
+    if (mp[k - arr[i]] && mp[k - arr[i]] != i)
+    {
+      cout << i + 1 << " " << mp[k - arr[i]] + 1 << endl;
+      return 0;
+    }
+  }
+  cout << "IMPOSSIBLE" << endl;
 }

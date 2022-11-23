@@ -28,19 +28,23 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int n, b1 = 0, b2 = 0;
-  cin >> n;
+  // fixed sliding window: find the maximum sum of a subarray of size m
+  int n, m;
+  cin >> n >> m;
   v(int) arr(n);
   cinarr(n, arr);
-  int l = 0, r = n - 1;
-  int ok = 1;
-  while (n--)
+  ll sum = 0, ans = INT_MIN;
+  // sum of the first m elements
+  for (int i = 0; i < m; i++)
+    sum += arr[i];
+  int l = 0, r = m;
+  cout << "SUM BEFOR: " << sum << endl;
+  while (r < n)
   {
-    if (ok)
-      (arr[l] > arr[r]) ? b1 += arr[l++] : b1 += arr[r--];
-    else
-      (arr[l] > arr[r]) ? b2 += arr[l++] : b2 += arr[r--];
-    ok = !ok;
+    ans = max(ans, sum); // update the answer
+    sum -= arr[l++]; // remove the leftmost element
+    sum += arr[r++]; // add the rightmost element
+  cout << "SUM: " << sum << endl;
   }
-  cout << b1 << " " << b2 << endl;
+  cout << ans << endl;
 }
