@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define vec(type) vector<type>
+#define v(type) vector<type>
 #define sz(x) (int)(x).size()
 #define all(x) x.begin(), x.end()
 #define read(file) ifstream cin(file)
@@ -25,37 +25,28 @@
   while (t--)
 using namespace std;
 typedef long long ll;
-ll slv(vec(ll) & v, ll c)
-{
-  ll ans = 0;
-  for (int i = 0; i < sz(v); i++)
-  {
-    if (v[i] == 0)
-      c--;
-    else
-      ans += c;
-  }
-  return ans;
-}
 int main()
 {
   o_a;
-  ll n, cntz = 0, fst = -1, lst = -1;
-  vec(ll) v(n), v1(n), v2(n);
-  cin >> n;
-  for (int i = 0; i < n; i++)
+  whilet
   {
-    cin >> v[i];
-    cntz += (v[i] == 0);
-    if (v[i] == 0 and fst == -1)
-      fst = i;
-    if (v[i] == 1)
-      lst = i;
+    int n;
+    char st;
+    cin >> n >> st;
+    string s;
+    cin >> s;
+    s += s;
+    int p = -1, ans = 0;
+    for (int i = 0; i < n * 2; i++)
+    {
+      if (s[i] == st and p == -1)
+        p = i;
+      if (s[i] == 'g' and p != -1)
+      {
+        ans = max(ans, i - p);
+        p = -1;
+      }
+    }
+    cout << ans << endl;
   }
-  v1 = v, v2 = v;
-  if (fst != -1)
-    v1[fst] = 1;
-  if (lst != -1)
-    v2[lst] = 0;
-  cout << max(slv(v, n), slv(v1, cntz - (fst != -1)), slv(v2, cntz + (fst != -1))) << endl;
 }

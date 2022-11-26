@@ -40,22 +40,27 @@ ll slv(vec(ll) & v, ll c)
 int main()
 {
   o_a;
-  ll n, cntz = 0, fst = -1, lst = -1;
-  vec(ll) v(n), v1(n), v2(n);
-  cin >> n;
-  for (int i = 0; i < n; i++)
+  whilet
   {
-    cin >> v[i];
-    cntz += (v[i] == 0);
-    if (v[i] == 0 and fst == -1)
-      fst = i;
-    if (v[i] == 1)
-      lst = i;
+    ll n;
+    cin >> n;
+    vec(ll) v(n), v1, v2;
+    ll cntz = 0, fst = -1, lst = -1;
+    for (int i = 0; i < n; i++)
+    {
+      cin >> v[i];
+      cntz += (v[i] == 0);
+      if (v[i] == 0 and fst == -1)
+        fst = i;
+      if (v[i] == 1)
+        lst = i;
+    }
+    v1 = v;
+    v2 = v;
+    if (fst != -1)
+      v1[fst] = 1;
+    if (lst != -1)
+      v2[lst] = 0;
+    cout << max({slv(v, cntz), slv(v1, cntz - (fst != -1)), slv(v2, cntz + (lst != -1))}) << endl;
   }
-  v1 = v, v2 = v;
-  if (fst != -1)
-    v1[fst] = 1;
-  if (lst != -1)
-    v2[lst] = 0;
-  cout << max(slv(v, n), slv(v1, cntz - (fst != -1)), slv(v2, cntz + (fst != -1))) << endl;
 }
