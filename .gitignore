@@ -6,7 +6,7 @@
 package-lock.json
 package.json
 node_modules
-**test.cpp
-**test.js
-index.html
-icons.html
+**test.**
+/public
+/.idea
+/cmake-build-debug
