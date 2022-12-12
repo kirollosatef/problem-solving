@@ -25,37 +25,38 @@
   while (t--)
 using namespace std;
 typedef long long ll;
-ll slv(vec(ll) & v, ll c)
+void solve()
 {
-  ll ans = 0;
-  for (int i = 0; i < sz(v); i++)
+  int x;
+  cin >> x;
+  vec(ll) v(x);
+  cinarr(x, v);
+  // possible == pow(2 , n) - 1
+  // pow(2 , n) == 1 << n
+  ll n = v.size();
+  vec(vec(ll)) ans;
+  for (int msk = 0; msk < (1ll << n); msk++)
   {
-    if (v[i] == 0)
-      c--;
-    else
-      ans += c;
+    vector<ll> sub;
+    for (int i = 0; i < n; i++)
+    {
+      if (msk & (1 << i))
+      {
+        sub.pb(v[i]);
+      }
+    }
+    ans.pb(sub);
   }
-  return ans;
+  sort(all(ans));
+  for (int i = 0; i < ans.size(); i++)
+  {
+    for (int j = 0; j < ans[i].size(); j++)
+      cout << ans[i][j] << " ";
+    cout << endl;
+  }
 }
 int main()
 {
   o_a;
-  ll n, cntz = 0, fst = -1, lst = -1;
-  vec(ll) v(n), v1(n), v2(n);
-  cin >> n;
-  for (int i = 0; i < n; i++)
-  {
-    cin >> v[i];
-    cntz += (v[i] == 0);
-    if (v[i] == 0 and fst == -1)
-      fst = i;
-    if (v[i] == 1)
-      lst = i;
-  }
-  v1 = v, v2 = v;
-  if (fst != -1)
-    v1[fst] = 1;
-  if (lst != -1)
-    v2[lst] = 0;
-  cout << max(slv(v, n), slv(v1, cntz - (fst != -1)), slv(v2, cntz + (fst != -1))) << endl;
+  solve();
 }

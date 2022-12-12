@@ -1,0 +1,10 @@
+STL = standerd template library:
+  1- contener: data structure => array , stack , queue , list
+  2- iterator: pointer that make movment in contener easy 
+  3- algorithm: sort , min , max , swap
+
+contener => Simple      : Pair
+         => Sequence    : Array, Vector, Deque, List, Forward List
+         => Associative : Map, Multimap, Set, Multiset
+         => Unordered   : Unordered Map, Unordered Multimap, Unordered set, Unordered multiset
+         => Adapter     : Stack, Queue, Priority Queue
