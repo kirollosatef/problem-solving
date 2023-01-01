@@ -7,8 +7,8 @@ package-lock.json
 package.json
 node_modules
 **test.**
+exeForWSLUbunto20.sh
 test.js
-**.sh
 /public
 /.idea
 /cmake-build-debug

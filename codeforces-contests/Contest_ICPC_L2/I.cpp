@@ -25,34 +25,42 @@
   while (t--)
 using namespace std;
 typedef long long ll;
+
+vec(vec(int)) alll(1e6 + 1, vec(int)(10 + 1, 0));
+
+void distinctPrimeFactors()
+{
+  vec(int) t(1e6 + 1, 0);
+  for (int i = 2; i <= 1e6; i++)
+  {
+    if (t[i] == 0)
+    {
+      for (int j = i; j <= 1e6; j += i)
+      {
+        t[j]++;
+      }
+    }
+  }
+  for (int i = 1; i <= 1e6; i++)
+  {
+    for (int j = 1; j <= 10; j++)
+    {
+      alll[i][j] = alll[i - 1][j];
+    }
+    alll[i][t[i]]++;
+  }
+}
 int main()
 {
   o_a;
-  int t;
-  cin >> t;
-  while (t--)
+  distinctPrimeFactors();
+  whilet
   {
-    int l, n;
-    cin >> l >> n;
-    vec(ll) v(n);
-    cinarr(n, v);
-    int ok = 0;
-    for (int m = 0; m < (1ll << n); m++)
-    {
-      ll ans = 0;
-      for (int i = 0; i < n; i++)
-      {
-        if (m & (1 << i))
-        {
-          ans += v[i];
-        }
-        if (ans == l)
-        {
-          ok = 1;
-          break;
-        }
-      }
-    }
-    (ok) ? YES : NO;
+    int a, b, n;
+    cin >> a >> b >> n;
+    if (a == 1 && n == 0)
+      cout << alll[b][n] + 1 << endl;
+    else
+      cout << alll[b][n] - alll[a - 1][n] << endl;
   }
 }

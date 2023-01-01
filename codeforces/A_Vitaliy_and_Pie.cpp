@@ -4,9 +4,10 @@
 #define all(x) x.begin(), x.end()
 #define read(file) ifstream cin(file)
 #define fill(x, i) memset(x, i, sizeof(x))
-#define lp(s, n, i) for (int i = s; i < n; i++)
-#define lpe(s, n, i) for (int i = s; i <= n; i++)
-#define rlp(s, n, i) for (int i = s; i >= n; i--)
+#define lp(i, srt, end, dir) \
+  for (int i = srt; (dir ? (i < end) : (i > end)); (dir ? i++ : i--))
+#define lpe(i, srt, end, dir) \
+  for (int i = srt; (dir ? (i <= end) : (i >= end)); (dir ? i++ : i--))
 #define cinarr(n, arr) for (int i = 0; i < n; cin >> arr[i], i++)
 #define o_a                     \
   ios_base::sync_with_stdio(0); \
@@ -28,31 +29,22 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int t;
-  cin >> t;
-  while (t--)
+  int n;
+  string s;
+  map<int, int> mp;
+  cin >> n >> s;
+  int sum = 0;
+  for (int i = 0; i < (n * 2) - 2; i++)
   {
-    int l, n;
-    cin >> l >> n;
-    vec(ll) v(n);
-    cinarr(n, v);
-    int ok = 0;
-    for (int m = 0; m < (1ll << n); m++)
+    if (i % 2 == 0)
+      mp[s[i] - 'a']++;
+    else
     {
-      ll ans = 0;
-      for (int i = 0; i < n; i++)
-      {
-        if (m & (1 << i))
-        {
-          ans += v[i];
-        }
-        if (ans == l)
-        {
-          ok = 1;
-          break;
-        }
-      }
+      if (mp[s[i] - 'A'] >= 1)
+        mp[s[i] - 'A']--;
+      else
+        sum++;
     }
-    (ok) ? YES : NO;
   }
+  cout << sum << endl;
 }

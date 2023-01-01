@@ -32,12 +32,12 @@ int main()
   cin >> n;
   vec(ll) v(n);
   cinarr(n, v);
-  for (int msk = 0; msk < (1ll << n); msk++)
+  for (int m = 0; m < (1ll << n); m++)
   {
     ll ans = 0;
     for (int i = 0; i < n; i++)
     {
-      if (msk & (1 << i))
+      if (m & (1 << i))
         ans += v[i];
       else
         ans -= v[i];

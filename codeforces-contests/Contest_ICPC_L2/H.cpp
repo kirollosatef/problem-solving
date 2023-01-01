@@ -25,34 +25,28 @@
   while (t--)
 using namespace std;
 typedef long long ll;
+// given
 int main()
 {
   o_a;
-  int t;
-  cin >> t;
-  while (t--)
+  whilet
   {
-    int l, n;
-    cin >> l >> n;
-    vec(ll) v(n);
-    cinarr(n, v);
-    int ok = 0;
-    for (int m = 0; m < (1ll << n); m++)
+    ll n, k;
+    cin >> n >> k;
+    vec(ll) arr(n);
+    cinarr(n, arr);
+    ll GCD = arr[0], mxGCD = 0;
+    ll sum = 0;
+    for (int i = 0; i < n; i++)
     {
-      ll ans = 0;
-      for (int i = 0; i < n; i++)
+      GCD = __gcd(mxGCD, arr[i]);
+      sum += arr[i];
+      if (sum >= k)
       {
-        if (m & (1 << i))
-        {
-          ans += v[i];
-        }
-        if (ans == l)
-        {
-          ok = 1;
-          break;
-        }
+        mxGCD = max(mxGCD, GCD);
+        sum = 0;
       }
     }
-    (ok) ? YES : NO;
+    cout << mxGCD << endl;
   }
 }

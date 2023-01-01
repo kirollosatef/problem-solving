@@ -28,31 +28,19 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int t;
-  cin >> t;
-  while (t--)
+  whilet
   {
-    int l, n;
-    cin >> l >> n;
-    vec(ll) v(n);
-    cinarr(n, v);
-    int ok = 0;
-    for (int m = 0; m < (1ll << n); m++)
+    ll n;
+    cin >> n;
+    vec(ll) arr(n);
+    cinarr(n, arr);
+    ll mn = arr[0];
+    ll mx = arr[0];
+    for (int i = 0; i < n; i++) 
     {
-      ll ans = 0;
-      for (int i = 0; i < n; i++)
-      {
-        if (m & (1 << i))
-        {
-          ans += v[i];
-        }
-        if (ans == l)
-        {
-          ok = 1;
-          break;
-        }
-      }
+      mx |= arr[i];
+      mn &= arr[i];
     }
-    (ok) ? YES : NO;
+    cout << mx - mn << endl;
   }
 }

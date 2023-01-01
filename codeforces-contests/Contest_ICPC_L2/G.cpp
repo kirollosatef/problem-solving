@@ -1,3 +1,4 @@
+// Given an array of nn integers, your task is to calculate the number of subarrays that have at most kk distinct values.
 #include <bits/stdc++.h>
 #define vec(type) vector<type>
 #define sz(x) (int)(x).size()
@@ -27,32 +28,36 @@ using namespace std;
 typedef long long ll;
 int main()
 {
+  // Given an array of nn integers, your task is to calculate the number of subarrays that have at most kk distinct values.
+// Input
+// The first input line has two integers nn and kk.
+// The next line has nn integers`
+// Output
+// Print one integer: the number of subarrays.
+
   o_a;
-  int t;
-  cin >> t;
-  while (t--)
+  whilet
   {
-    int l, n;
-    cin >> l >> n;
-    vec(ll) v(n);
-    cinarr(n, v);
-    int ok = 0;
-    for (int m = 0; m < (1ll << n); m++)
+    ll n, k;
+    cin >> n >> k;
+    vec(ll) arr(n);
+    cinarr(n, arr);
+    ll ans = 0;
+    ll l = 0, r = 0;
+    map<ll, ll> m;
+    while (r < n)
     {
-      ll ans = 0;
-      for (int i = 0; i < n; i++)
+      m[arr[r]]++;
+      while (sz(m) > k)
       {
-        if (m & (1 << i))
-        {
-          ans += v[i];
-        }
-        if (ans == l)
-        {
-          ok = 1;
-          break;
-        }
+        m[arr[l]]--;
+        if (m[arr[l]] == 0)
+          m.erase(arr[l]);
+        l++;
       }
+      ans += r - l + 1;
+      r++;
     }
-    (ok) ? YES : NO;
+    cout << ans << endl;
   }
 }

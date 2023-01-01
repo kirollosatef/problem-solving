@@ -25,34 +25,38 @@
   while (t--)
 using namespace std;
 typedef long long ll;
+// isPrime function
+bool isPrime(int n)
+{
+  if (n <= 1)
+    return false;
+  if (n <= 3)
+    return true;
+  if (n % 2 == 0 || n % 3 == 0)
+    return false;
+  for (int i = 5; i * i <= n; i = i + 6)
+    if (n % i == 0 || n % (i + 2) == 0)
+      return false;
+  return true;
+}
 int main()
 {
   o_a;
-  int t;
-  cin >> t;
-  while (t--)
+  whilet
   {
-    int l, n;
-    cin >> l >> n;
-    vec(ll) v(n);
-    cinarr(n, v);
-    int ok = 0;
-    for (int m = 0; m < (1ll << n); m++)
+    int n;
+    string s;
+    cin >> n >> s;
+    int pre = s[0] - '0';
+    for (int i = 1; i < n; i++)
     {
-      ll ans = 0;
-      for (int i = 0; i < n; i++)
-      {
-        if (m & (1 << i))
-        {
-          ans += v[i];
-        }
-        if (ans == l)
-        {
-          ok = 1;
-          break;
-        }
-      }
+      if (s[i] == '0')
+        cout << "+";
+      else if (pre)
+        cout << "-", pre = 0;
+      else
+        cout << "+", pre = 1;
     }
-    (ok) ? YES : NO;
+    cout << endl;
   }
 }
