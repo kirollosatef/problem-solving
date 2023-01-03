@@ -29,35 +29,9 @@ typedef long long ll;
 int main()
 {
   o_a;
-  int n;
-  cin >> n;
-  vec(int) P, N;
-  int Z = 0;
-  lp(i, 0, n, 1)
-  {
-    int x;
-    cin >> x;
-    if (x == 0)
-      Z++;
-    else if (x > 0)
-      P.pb(x);
-    else
-      N.pb(x);
-  }
-  cout << 1 << " " << N[0] << endl;
-  if (P.size() == 0)
-    cout << 2 << " " << N[1] << " " << N[2] << endl;
-  else
-    cout << 1 << " " << P[0] << endl;
-  if (P.size() == 0)
-    cout << N.size() - 3 + Z << " ";
-  else
-    cout << N.size() + P.size() - 2 + Z << " ";
-  if (sz(P) != 0)
-    lp(i, 1, P.size() , 1) cout << P[i] << " ";
-  if (P.size() == 0)
-    lp(i, 3, N.size(), 1) cout << N[i] << " ";
-  else
-    lp(i, 1, N.size(), 1) cout << N[i] << " ";
-  lp(i, 0, Z, 1) cout << 0 << " ";
+  int n, a, b;
+  cin >> n >> a >> b;
+  while (b < 0)
+    b += n;
+  ((a + b) % n) ? cout << ((a + b) % n) : cout << n;
 }
