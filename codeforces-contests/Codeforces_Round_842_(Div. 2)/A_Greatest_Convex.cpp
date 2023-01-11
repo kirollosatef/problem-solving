@@ -4,9 +4,10 @@
 #define all(x) x.begin(), x.end()
 #define read(file) ifstream cin(file)
 #define fill(x, i) memset(x, i, sizeof(x))
-#define lp(s, n, i) for (int i = s; i < n; i++)
-#define lpe(s, n, i) for (int i = s; i <= n; i++)
-#define rlp(s, n, i) for (int i = s; i >= n; i--)
+#define lp(i, srt, end, dir) \
+  for (int i = srt; (dir ? (i < end) : (i > end)); (dir ? i++ : i--))
+#define lpe(i, srt, end, dir) \
+  for (int i = srt; (dir ? (i <= end) : (i >= end)); (dir ? i++ : i--))
 #define cinarr(n, arr) for (int i = 0; i < n; cin >> arr[i], i++)
 #define o_a                     \
   ios_base::sync_with_stdio(0); \
@@ -25,14 +26,8 @@
   while (t--)
 using namespace std;
 typedef long long ll;
-int fact(ll n)
-{
-  if (n == 0)
-    return 1;
-  return n * fact(n - 1);
-}
 int main()
 {
   o_a;
-  cout << fact(5);
+  
 }

@@ -1,12 +1,15 @@
 #include <bits/stdc++.h>
-#define vec(type) vector<type>
+#define vll vector<ll>
+#define pll pair<ll, ll>
+#define vpll vector<pll>
 #define sz(x) (int)(x).size()
 #define all(x) x.begin(), x.end()
 #define read(file) ifstream cin(file)
 #define fill(x, i) memset(x, i, sizeof(x))
-#define lp(s, n, i) for (int i = s; i < n; i++)
-#define lpe(s, n, i) for (int i = s; i <= n; i++)
-#define rlp(s, n, i) for (int i = s; i >= n; i--)
+#define lp(i, srt, end, dir) \
+  for (int i = srt; (dir ? (i < end) : (i > end)); (dir ? i++ : i--))
+#define lpe(i, srt, end, dir) \
+  for (int i = srt; (dir ? (i <= end) : (i >= end)); (dir ? i++ : i--))
 #define cinarr(n, arr) for (int i = 0; i < n; cin >> arr[i], i++)
 #define o_a                     \
   ios_base::sync_with_stdio(0); \
@@ -25,7 +28,7 @@
   while (t--)
 using namespace std;
 typedef long long ll;
-int fact(ll n)
+ll fact(ll n)
 {
   if (n == 0)
     return 1;
@@ -34,5 +37,19 @@ int fact(ll n)
 int main()
 {
   o_a;
-  cout << fact(5);
+  whilet
+  {
+    ll n;
+    cin >> n;
+    // ll ans = 0;
+    // lpe(i, n - 1, 1, 0)
+    // {
+    //   if ((fact(i) + fact(i - 1)) % n == 0)
+    //   {
+    //     ans = i;
+    //     break;
+    //   }
+    // }
+    cout << n - 1 << endl;
+  }
 }
