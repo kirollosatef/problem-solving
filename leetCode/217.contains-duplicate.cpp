@@ -11,12 +11,12 @@ class Solution
 public:
   bool containsDuplicate(vector<int> &nums)
   {
-    unordered_set<int> unique;
+    map<int, bool> mp;
     for (auto n : nums)
     {
-      if (unique.find(n) != unique.end())
-        return true;
-      unique.insert(n);
+      if (mp[n] == 1)
+        return 1;
+      mp[n] = 1;
     }
     return false;
   }
