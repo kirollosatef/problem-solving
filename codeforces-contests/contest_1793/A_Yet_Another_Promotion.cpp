@@ -29,5 +29,31 @@ typedef long long ll;
 int main()
 {
   o_a;
-  
+  // day 1 = a coins for one kilo and if you pay for m kilos you get m+1 kilos
+  // day 2 = b coins for one kilo
+  whilet
+  {
+    ll a, b, n, m;
+    cin >> a >> b >> n >> m;
+    ll ans = 0;
+    if (m > n)
+    {
+      ans = min(a, b) * n;
+      n -= n;
+    }
+    if (m * a > (m + 1) * b && n)
+    {
+      ans = min(a, b) * n;
+      n -= n;
+    }
+    if (m * a <= (m + 1) * b && n)
+    {
+      ll tmp = (n % (m + 1));
+      ans += tmp * min(a, b);
+      n -= tmp;
+      n -= (n / (m + 1));
+      ans += n * a;
+    }
+    cout << ans << endl;
+  }
 }

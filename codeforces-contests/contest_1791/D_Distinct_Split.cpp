@@ -29,5 +29,5 @@ typedef long long ll;
 int main()
 {
   o_a;
-  
+  // create prefexsum array and suffixsum array
 }

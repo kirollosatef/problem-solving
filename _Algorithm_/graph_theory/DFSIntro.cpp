@@ -91,7 +91,6 @@ void dfs(int node)
     if (!visited[child]) // To avoid cyclic behavior
       dfs(child);
   }
-
   topsort.push_back(node); // DAG // Other way Indegree / Outdegree
 }
 
@@ -187,11 +186,11 @@ int main()
 
   lp(i, e)
   {
-    int from, to;
+    int from, to;  
     cin >> from >> to;
     adj[from - 1].push_back(to - 1);
   }
-
+  
   lp(i, n) if (start[i] == -1)
       dfs_EdgeClassification(i);
 

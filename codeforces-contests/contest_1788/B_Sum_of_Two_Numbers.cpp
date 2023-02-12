@@ -26,8 +26,22 @@
   while (t--)
 using namespace std;
 typedef long long ll;
+ll sumDigits(ll n)
+{
+  if (n < 10)
+    return n;
+  return n % 10 + sumDigits(n / 10);
+}
 int main()
 {
   o_a;
-  
+  ll n;
+  cin >> n;
+  ll a = 1, b = n - 1;
+  while (sumDigits(a) != sumDigits(b) || abs(a - b)< 2)
+  {
+    a++;
+    b--;
+  }
+  cout << a << " " << b << endl;
 }
