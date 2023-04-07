@@ -1,0 +1,31 @@
+/*
+ * @lc app=leetcode id=2444 lang=cpp
+ *
+ * [2444] Count Subarrays With Fixed Bounds
+ */
+#include <bits/stdc++.h>
+using namespace std;
+// @lc code=start
+class Solution
+{
+public:
+  long long countSubarrays(vector<int> &nums, int minK, int maxK)
+  {
+    long long ans = 0;
+    int j = -1;
+    int prevMinKIndex = -1;
+    int prevMaxKIndex = -1;
+    for (int i = 0; i < nums.size(); ++i)
+    {
+      if (nums[i] < minK || nums[i] > maxK)
+        j = i;
+      if (nums[i] == minK)
+        prevMinKIndex = i;
+      if (nums[i] == maxK)
+        prevMaxKIndex = i;
+      ans += max(0, min(prevMinKIndex, prevMaxKIndex) - j);
+    }
+    return ans;
+  }
+};
+// @lc code=end
