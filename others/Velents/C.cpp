@@ -29,5 +29,16 @@ typedef long long ll;
 int main()
 {
   o_a;
-  
+  map<string, string> m;
+  int num;
+  cin >> num;
+  while (num--)
+  {
+    string s1, s2;
+    cin >> s1 >> s2;
+    m[s2] = s1;
+  }
+  string s;
+  cin >> s;
+  cout << m[s];
 }

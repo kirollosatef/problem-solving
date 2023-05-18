@@ -29,4 +29,13 @@ typedef long long ll;
 int main()
 {
   o_a;
+  whilet
+  {
+    int n, k;
+    cin >> n >> k;
+    if (n % 2 == 0 || (k % 2 == 1 && n >= k))
+      YES;
+    else
+      NO;
+  }
 }

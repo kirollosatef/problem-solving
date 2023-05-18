@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 #define vec(type) vector<type>
 #define sz(x) (int)(x).size()
@@ -29,7 +30,27 @@ typedef long long ll;
 int main()
 {
   o_a;
-  string x ;
-  cin >> x ;
-  cout << x ;
+  whilet
+  {
+    string s;
+    cin >> s;
+    if (s[0] == '0')
+    {
+      cout << 0 << endl;
+      continue;
+    }
+    ll ans = 1;
+    for (int i = 0; i < s.size(); ++i)
+    {
+      if (i == 0 && s[i] == '?')
+      {
+        ans *= 9;
+      }
+      else if (s[i] == '?')
+      {
+        ans *= 10;
+      }
+    }
+    cout << ans << endl;
+  }
 }
