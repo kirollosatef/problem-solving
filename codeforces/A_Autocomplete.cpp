@@ -22,7 +22,7 @@
 #define S second
 #define whilet \
   int t;       \
-  cin >> t;    \
+  cin >> t;    \ 
   while (t--)
 using namespace std;
 typedef long long ll;
