@@ -29,21 +29,4 @@ typedef long long ll;
 int main()
 {
   o_a;
-  whilet
-  {
-    int n;
-    string s;
-    cin >> n >> s;
-    int fb = -1, lb = -1;
-    for (int i = 0; i < n; i++)
-    {
-      if (s[i] == 'B')
-      {
-        if (fb == -1)
-          fb = i;
-        lb = i;
-      }
-    }
-    cout << (lb - fb + 1) << endl;
-  }
 }

@@ -26,24 +26,24 @@
   while (t--)
 using namespace std;
 typedef long long ll;
+
 int main()
 {
   o_a;
-  whilet
+  // you have a array [1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9]
+
+  int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+  int temp;
+  for (int i = 0; i <= 4; i++)
   {
-    int n;
-    string s;
-    cin >> n >> s;
-    int fb = -1, lb = -1;
-    for (int i = 0; i < n; i++)
-    {
-      if (s[i] == 'B')
-      {
-        if (fb == -1)
-          fb = i;
-        lb = i;
-      }
-    }
-    cout << (lb - fb + 1) << endl;
+    temp = arr[i];
+    arr[i] = arr[8 - i];
+    arr[8 - i] = temp;
+  }
+
+  for (int n : arr)
+  {
+    cout << n << " ";
   }
 }
