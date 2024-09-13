@@ -8,18 +8,22 @@
   cin.tie(0);
 using namespace std;
 typedef long long ll;
+
+const int WIDTH = 80;
+const int HEIGHT = 22;
+
 int main()
 {
   float A = 0, B = 0;
   float i, j;
   int k;
-  float z[1760];
-  char b[1760];
+  float z[HEIGHT][WIDTH];
+  char b[HEIGHT][WIDTH];
   printf("\x1b[2J");
   for (;;)
   {
-    memset(b, 32, 1760);
-    memset(z, 0, 7040);
+    memset(b, 32, sizeof(b));
+    memset(z, 0, sizeof(z));
     for (j = 0; j < 6.28; j += 0.07)
     {
       for (i = 0; i < 6.28; i += 0.02)
@@ -37,23 +41,26 @@ int main()
         float t = c * h * g - f * e;
         int x = 40 + 30 * D * (l * h * m - t * n);
         int y = 12 + 15 * D * (l * h * n + t * m);
-        int o = x + 80 * y;
         int N = 8 * ((f * e - c * d * g) * m - c * d * e - f * g - l * d * n);
-        if (22 > y && y > 0 && x > 0 && 80 > x && D > z[o])
+        if (y >= 0 && y < HEIGHT && x >= 0 && x < WIDTH && D > z[y][x])
         {
-          z[o] = D;
-          b[o] = ".,-~:;=!*#$@"[N > 0 ? N : 0];
+          z[y][x] = D;
+          b[y][x] = ".,-~:;=!*#$@"[N > 0 ? N : 0];
         }
       }
     }
     printf("\x1b[H");
-    for (k = 0; k < 1761; k++)
+    for (int y = 0; y < HEIGHT; y++)
     {
-      putchar(k % 80 ? b[k] : 10);
-      A += 0.00004;
-      B += 0.00002;
+      for (int x = 0; x < WIDTH; x++)
+      {
+        putchar(b[y][x]);
+      }
+      putchar('\n');
     }
-    // usleep(30000);
+    A += 0.04;
+    B += 0.02;
+    usleep(30000);  // Add a small delay to control the animation speed
   }
   return 0;
 }
