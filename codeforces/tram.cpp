@@ -21,5 +21,5 @@ int main()
     total += in;
     maxx = max(maxx, total);
   }
-  cout << maxx;
+  cout << maxx << endl;
 }
